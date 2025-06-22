@@ -12,7 +12,7 @@ ipv6 = false
 
 [MITM]
 enable = true
-hostname = api.sub.meitu.com, *.capcut.com, api.capcut.com, *.bytedance.com, *.byteoversea.com, *.tiktokv.com, payment.capcut.com
+hostname = api.sub.meitu.com, *.capcut.com, api.capcut.com, *.bytedance.com, *.tiktokv.com, payment.capcut.com
 ca-passphrase = 
 ca-p12 = 
 
@@ -40,7 +40,7 @@ http-response ^https:\/\/effect\.tiktokv\.com\/api\/v2\/effect\/(list|detail) sc
 http-response ^https:\/\/api\.capcut\.com\/template\/list script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/pro_templates.js, tag=Pro Templates
 
 # Xóa quảng cáo
-http-response ^https:\/\/.*\.capcut\.com\/api\/ad\/.* script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/removeads.js, tag=Remove Ads
+http-response ^https:\/\/.*\.capcut\.com\/api\/ad\/.* script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/remove_ads.js, tag=Remove Ads
 
 [Rule]
 # Rule CapCut
