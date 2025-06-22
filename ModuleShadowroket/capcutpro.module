@@ -4,35 +4,39 @@
 # Bản quyền thuộc Lê Quốc Tín
 
 [General]
-bypass-system = true 
+bypass-system = true
 skip-proxy = *.local, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 dns-server = 8.8.8.8, 1.1.1.1
 ipv6 = false
 
 [MITM]
 enable = true
-hostname = api.sub.meitu.com, *.capcut.com, api.capcut.com, *.bytedance.com, *.byteoversea.com, *.tiktokv.com
+hostname = api.sub.meitu.com, *.capcut.com, api.capcut.com, *.bytedance.com, *.byteoversea.com, *.tiktokv.com, payment.capcut.com
 ca-passphrase = 
 ca-p12 = 
 
 [Script]
 # Mở khóa CapCut Pro
-http-response ^https?:\/\/api\.sub\.meitu\.com\/v\d\/user\/vip_info\.json script-path=https://raw.githubusercontent.com/CrackersHub/CapCut-Pro-Unlock/main/capcut.js, requires-body=true, timeout=10, tag=CapCut Pro Unlock
+http-response ^https?:\/\/api\.sub\.meitu\.com\/v\d\/user\/vip_info\.json script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/capcut.js, requires-body=true, timeout=10, tag=CapCut Pro Unlock
 
 # Thêm huy hiệu Pro
 http-response ^https:\/\/.*\.(capcut|tiktokv)\.com\/api\/v\d\/user\/profile script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/pro_badge.js, requires-body=true, tag=Pro Badge
 
-# Bỏ watermark khi export
-http-request ^https:\/\/.*\.capcut\.com\/api\/upload script-path=https://raw.githubusercontent.com/CrackersHub/CapCut-Pro-Unlock/main/remove_watermark.js, tag=Remove Watermark
+# Ẩn mục mua trong ứng dụng
+http-response ^https:\/\/.*\.capcut\.com\/api\/v\d\/shop\/.* script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/hide_purchases.js, tag=Hide Purchases
+http-response ^https:\/\/payment\.capcut\.com\/.* script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/block_payments.js, tag=Block Payments
 
-# Mở khóa hiệu ứng premium  
-http-response ^https:\/\/effect\.tiktokv\.com\/api\/v2\/effect\/(list|detail) script-path=https://raw.githubusercontent.com/CrackersHub/CapCut-Pro-Unlock/main/premium_effects.js, tag=Premium Effects
+# Bỏ watermark khi export
+http-request ^https:\/\/.*\.capcut\.com\/api\/upload script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/remove_watermark.js, tag=Remove Watermark
+
+# Mở khóa hiệu ứng premium
+http-response ^https:\/\/effect\.tiktokv\.com\/api\/v2\/effect\/(list|detail) script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/premium_effects.js, tag=Premium Effects
 
 # Mở khóa template Pro
-http-response ^https:\/\/api\.capcut\.com\/template\/list script-path=https://raw.githubusercontent.com/CrackersHub/CapCut-Pro-Unlock/main/pro_templates.js, tag=Pro Templates
+http-response ^https:\/\/api\.capcut\.com\/template\/list script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/pro_templates.js, tag=Pro Templates
 
 # Xóa quảng cáo
-http-response ^https:\/\/.*\.capcut\.com\/api\/ad\/.* script-path=https://raw.githubusercontent.com/CrackersHub/CapCut-Pro-Unlock/main/remove_ads.js, tag=Remove Ads
+http-response ^https:\/\/.*\.capcut\.com\/api\/ad\/.* script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/removeads.js, tag=Remove Ads
 
 [Rule]
 # Rule CapCut
@@ -42,6 +46,7 @@ DOMAIN-SUFFIX,motidom.com,PROXY
 DOMAIN-SUFFIX,bytedance.com,PROXY
 DOMAIN-SUFFIX,byteoversea.com,PROXY
 DOMAIN-SUFFIX,tiktokv.com,PROXY
+DOMAIN,payment.capcut.com,REJECT
 
 # Final
 FINAL,DIRECT
