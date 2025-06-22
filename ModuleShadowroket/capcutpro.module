@@ -20,7 +20,7 @@ ca-p12 =
 http-response ^https?:\/\/api\.sub\.meitu\.com\/v\d\/user\/vip_info\.json script-path=https://raw.githubusercontent.com/CrackersHub/CapCut-Pro-Unlock/main/capcut.js, requires-body=true, timeout=10, tag=CapCut Pro Unlock
 
 # Thêm huy hiệu Pro
-http-response ^https:\/\/.*\.(capcut|tiktokv)\.com\/api\/v\d\/user\/profile script-path=https://raw.githubusercontent.com/CrackersHub/CapCut-Pro-Unlock/main/pro_badge.js, requires-body=true, tag=Pro Badge
+http-response ^https:\/\/.*\.(capcut|tiktokv)\.com\/api\/v\d\/user\/profile script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/pro_badge.js, requires-body=true, tag=Pro Badge
 
 # Bỏ watermark khi export
 http-request ^https:\/\/.*\.capcut\.com\/api\/upload script-path=https://raw.githubusercontent.com/CrackersHub/CapCut-Pro-Unlock/main/remove_watermark.js, tag=Remove Watermark
