@@ -12,7 +12,7 @@ ipv6 = false
 
 [MITM]
 enable = true
-hostname = api.sub.meitu.com, *.capcut.com, api.capcut.com, *.bytedance.com, *.tiktokv.com, payment.capcut.com
+hostname = api.sub.meitu.com, *.capcut.com, api.capcut.com, *.bytedance.com, *.byteoversea.com, *.tiktokv.com, payment.capcut.com
 ca-passphrase = 
 ca-p12 = 
 
