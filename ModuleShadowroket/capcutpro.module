@@ -1,0 +1,41 @@
+#!name = CapCut Pro
+#!desc = By: Quốc Tín (quctinne)
+# Facebook: https://www.facebook.com/quctinne
+# Bản quyền thuộc Lê Quốc Tín
+
+
+[General]
+bypass-system = true 
+skip-proxy = *.local, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
+dns-server = 8.8.8.8, 1.1.1.1
+ipv6 = false
+
+[MITM]
+enable = true
+hostname = api.sub.meitu.com, *.capcut.com, api.capcut.com, *.bytedance.com, *.byteoversea.com
+ca-passphrase = 
+ca-p12 = 
+
+[Script]
+# Mở khóa CapCut Pro
+http-response ^https?:\/\/api\.sub\.meitu\.com\/v\d\/user\/vip_info\.json script-path=https://raw.githubusercontent.com/CrackersHub/CapCut-Pro-Unlock/main/capcut.js, requires-body=true, timeout=10, tag=CapCut Pro Unlock
+
+# Bỏ watermark khi export
+http-request ^https:\/\/.*\.capcut\.com\/api\/upload script-path=https://raw.githubusercontent.com/CrackersHub/CapCut-Pro-Unlock/main/remove_watermark.js, tag=Remove Watermark
+
+# Mở khóa hiệu ứng premium  
+http-response ^https:\/\/effect\.tiktokv\.com\/api\/v2\/effect\/(list|detail) script-path=https://raw.githubusercontent.com/CrackersHub/CapCut-Pro-Unlock/main/premium_effects.js, tag=Premium Effects
+
+# Mở khóa template Pro
+http-response ^https:\/\/api\.capcut\.com\/template\/list script-path=https://raw.githubusercontent.com/CrackersHub/CapCut-Pro-Unlock/main/pro_templates.js, tag=Pro Templates
+
+[Rule]
+# Rule CapCut
+DOMAIN,api.sub.meitu.com,PROXY
+DOMAIN-SUFFIX,capcut.com,PROXY
+DOMAIN-SUFFIX,motidom.com,PROXY
+DOMAIN-SUFFIX,bytedance.com,PROXY
+DOMAIN-SUFFIX,byteoversea.com,PROXY
+
+# Final
+FINAL,DIRECT
