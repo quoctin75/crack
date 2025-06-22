@@ -42,6 +42,9 @@ http-response ^https:\/\/api\.capcut\.com\/template\/list script-path=https://ra
 # Xóa quảng cáo
 http-response ^https:\/\/.*\.capcut\.com\/api\/ad\/.* script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/remove_ads.js, tag=Remove Ads
 
+# Xuất video nhanh (Fast Export)
+http-request ^https:\/\/.*\.capcut\.com\/api\/v\d\/video\/export script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/fast_export.js, tag=Fast Export
+http-response ^https:\/\/.*\.capcut\.com\/api\/v\d\/export\/status script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/bypass_export_limit.js, tag=Bypass Export Limit
 [Rule]
 # Rule CapCut
 DOMAIN,api.sub.meitu.com,PROXY
