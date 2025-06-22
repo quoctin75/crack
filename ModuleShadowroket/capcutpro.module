@@ -45,6 +45,11 @@ http-response ^https:\/\/.*\.capcut\.com\/api\/ad\/.* script-path=https://raw.gi
 # Xuất video nhanh (Fast Export)
 http-request ^https:\/\/.*\.capcut\.com\/api\/v\d\/video\/export script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/fast_export.js, tag=Fast Export
 http-response ^https:\/\/.*\.capcut\.com\/api\/v\d\/export\/status script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/bypass_export_limit.js, tag=Bypass Export Limit
+
+# Quản lý mua Pro
+http-response ^https:\/\/.*\.capcut\.com\/api\/v\d\/purchase\/status script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/pro_manager.js, tag=Pro Manager
+http-response ^https:\/\/billing\.capcut\.com\/.* script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/auto_renew.js, tag=Auto Renew
+
 [Rule]
 # Rule CapCut
 DOMAIN,api.sub.meitu.com,PROXY
