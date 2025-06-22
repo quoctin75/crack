@@ -1,5 +1,6 @@
 #!name = CapCut Pro
 #!desc = By: Quốc Tín (quctinne)
+#!up = 22/06/2025
 # Facebook: https://www.facebook.com/quctinne
 # Bản quyền thuộc Lê Quốc Tín
 
@@ -18,6 +19,9 @@ ca-p12 =
 [Script]
 # Mở khóa CapCut Pro
 http-response ^https?:\/\/api\.sub\.meitu\.com\/v\d\/user\/vip_info\.json script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/capcut.js, requires-body=true, timeout=10, tag=CapCut Pro Unlock
+
+# Mở khóa Standard
+http-response ^https:\/\/.*\.capcut\.com\/api\/v\d\/user\/standard_info script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/unlock_standard.js, requires-body=true, tag=Unlock Standard
 
 # Thêm huy hiệu Pro
 http-response ^https:\/\/.*\.(capcut|tiktokv)\.com\/api\/v\d\/user\/profile script-path=https://raw.githubusercontent.com/quoctin75/crack/refs/heads/main/js/pro_badge.js, requires-body=true, tag=Pro Badge
